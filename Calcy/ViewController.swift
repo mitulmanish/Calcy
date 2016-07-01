@@ -10,16 +10,36 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    var userIsInTheMiddleOfTyping = false
+    @IBOutlet weak var outputLabel: UILabel!
+    
+    @IBAction func buttonPressed(sender: UIButton) {
+        
+        guard let value = sender.currentTitle else {
+            print("Not set")
+            return
+        }
+        
+        if userIsInTheMiddleOfTyping {
+            outputLabel.text = outputLabel.text! + value
+        } else {
+            outputLabel.text = value
+        }
+        
+        userIsInTheMiddleOfTyping = true
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func matmaticalOperationPerformed(sender: UIButton) {
+        
+        
+        if let operation = sender.currentTitle {
+            if operation == "π" {
+                outputLabel.text = String(format: "%.3f", M_PI)
+            }
+        }
+        userIsInTheMiddleOfTyping = false
     }
-
-
+    
 }
 
