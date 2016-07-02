@@ -11,6 +11,9 @@ import Foundation
 class CalculatorBrain {
     
     private var accumulator = 0.0
+    private typealias binaryOperationSignature = (Double,Double) -> Double
+    private typealias unaryOperationSignature = (Double) -> Double
+    
     private var opearations: [String : Operation] = [
         "π"     : Operation.Constant(M_PI),
         "e"     : Operation.Constant(M_E),
@@ -28,9 +31,6 @@ class CalculatorBrain {
         "C"     : Operation.Clear,
         "="     : Operation.Equals
     ]
-    
-    private typealias binaryOperationSignature = (Double,Double) -> Double
-    private typealias unaryOperationSignature = (Double) -> Double
     
     private enum Operation {
         case Constant(Double)
