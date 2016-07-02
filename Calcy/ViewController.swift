@@ -10,36 +10,49 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var userIsInTheMiddleOfTyping = false
-    @IBOutlet weak var outputLabel: UILabel!
+    private var userIsInTheMiddleOfTyping = false
     
-    @IBAction func buttonPressed(sender: UIButton) {
+    private var brain = CalculatorBrain()
+    
+    @IBOutlet private weak var display: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    @IBAction private func touchDigit(sender: UIButton) {
         
-        guard let value = sender.currentTitle else {
-            print("Not set")
-            return
+        let digit = sender.currentTitle!
+        if userIsInTheMiddleOfTyping {
+            let textCurrentlyInDisplay = display.text!
+            display.text = textCurrentlyInDisplay + digit
+        } else {
+            display.text = digit
         }
+        userIsInTheMiddleOfTyping = true
+    }
+    
+    private var displayValue: Double {
+        
+        get { return Double(display.text!)! }
+        
+        set { display.text = String(newValue) }
+    }
+    
+    
+    @IBAction private func performOperation(sender: UIButton) {
         
         if userIsInTheMiddleOfTyping {
-            outputLabel.text = outputLabel.text! + value
-        } else {
-            outputLabel.text = value
+            brain.setOperand(displayValue)
+            userIsInTheMiddleOfTyping = false
+        } 
+        
+        if let mathematicalOperation = sender.currentTitle {
+            brain.performOperation(mathematicalOperation)
         }
-        
-        userIsInTheMiddleOfTyping = true
-        
+        displayValue = brain.result
     }
     
-    @IBAction func matmaticalOperationPerformed(sender: UIButton) {
-        
-        
-        if let operation = sender.currentTitle {
-            if operation == "π" {
-                outputLabel.text = String(format: "%.3f", M_PI)
-            }
-        }
-        userIsInTheMiddleOfTyping = false
-    }
     
 }
 

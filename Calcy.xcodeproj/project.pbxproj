@@ -12,6 +12,7 @@
 		DDF3CA481D264EB200616F53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDF3CA461D264EB200616F53 /* Main.storyboard */; };
 		DDF3CA4A1D264EB200616F53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDF3CA491D264EB200616F53 /* Assets.xcassets */; };
 		DDF3CA4D1D264EB200616F53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDF3CA4B1D264EB200616F53 /* LaunchScreen.storyboard */; };
+		DDF3CA591D26E41400616F53 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF3CA581D26E41400616F53 /* CalculatorBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		DDF3CA491D264EB200616F53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDF3CA4C1D264EB200616F53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDF3CA4E1D264EB200616F53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDF3CA581D26E41400616F53 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,47 @@
 		DDF3CA411D264EB200616F53 /* Calcy */ = {
 			isa = PBXGroup;
 			children = (
-				DDF3CA421D264EB200616F53 /* AppDelegate.swift */,
-				DDF3CA441D264EB200616F53 /* ViewController.swift */,
-				DDF3CA461D264EB200616F53 /* Main.storyboard */,
+				DDF3CA571D26CEEE00616F53 /* Supporting Files */,
+				DDF3CA561D26CEE300616F53 /* View */,
+				DDF3CA551D26CED800616F53 /* Controller */,
+				DDF3CA541D26CECC00616F53 /* Model */,
 				DDF3CA491D264EB200616F53 /* Assets.xcassets */,
-				DDF3CA4B1D264EB200616F53 /* LaunchScreen.storyboard */,
-				DDF3CA4E1D264EB200616F53 /* Info.plist */,
 			);
 			path = Calcy;
+			sourceTree = "<group>";
+		};
+		DDF3CA541D26CECC00616F53 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DDF3CA581D26E41400616F53 /* CalculatorBrain.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DDF3CA551D26CED800616F53 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DDF3CA441D264EB200616F53 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		DDF3CA561D26CEE300616F53 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DDF3CA4B1D264EB200616F53 /* LaunchScreen.storyboard */,
+				DDF3CA461D264EB200616F53 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		DDF3CA571D26CEEE00616F53 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDF3CA421D264EB200616F53 /* AppDelegate.swift */,
+				DDF3CA4E1D264EB200616F53 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDF3CA591D26E41400616F53 /* CalculatorBrain.swift in Sources */,
 				DDF3CA451D264EB200616F53 /* ViewController.swift in Sources */,
 				DDF3CA431D264EB200616F53 /* AppDelegate.swift in Sources */,
 			);
