@@ -14,7 +14,7 @@ Calculator App implemented using Swift 2.2
 
 ## Demo 
 
-![calculatordemo](https://cloud.githubusercontent.com/assets/8016341/16539594/29840b0c-408b-11e6-9ee5-3da2703b7eab.gif)
+![calcy](https://cloud.githubusercontent.com/assets/8016341/16544342/f4fccc8c-4145-11e6-8f59-1efc1bb0db87.gif)
 
 ## Contributing
 1. Fork it!
